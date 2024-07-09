@@ -8,14 +8,14 @@ class colorizer:
     END = '\033[0m'
     GREEN = '\033[92m'
 
-'''Run the scraper adn write the CSV we want'''
+'''Defining the main function'''
 
 def main():
     scrape_colors()
     write_csv()
     print(colorizer.GREEN + 'All done!\r\n' + colorizer.END)
 
-'''Fills out the colors by scraping them from https://threadcolors.com/ '''
+'''Stealing the color info from https://threadcolors.com/ '''
 
 def scrape_colors():
     global colors
