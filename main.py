@@ -219,8 +219,8 @@ for i in range(len(svg_palette)):
 # Save the SVG files:) 
 # col_sym.save('results/color_with_symbol.svg')
 # blw_nsy.save('results/black_white_nosymbol.svg')
-svg_pattern_name = 'results/sacredheart.svg'
-svg_key_name = 'results/sacredheart_key.svg'
+svg_pattern_name = 'results/pattern.svg'
+svg_key_name = 'results/key.svg'
 
 col_nsy.save(svg_pattern_name)
 key.save(svg_key_name)
