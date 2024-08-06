@@ -54,19 +54,19 @@ class SVG:
         for y in range(size + size * 10, height, size * 10):
             self.xml += "<line x1=\"" + str(size) + "\" y1=\"" + str(y) + "\" x2=\"" + str(width) + "\" y2=\"" + str(y) + "\" style=\"stroke:black;stroke-width:2\" />"
             
-    def add_key_color(self, x, y, size, index, colour):
+    def add_key_color(self, x, y, size, index, color):
         # key
         glyph_scale = size / 20.0
-        fill = 'fill:rgb(255,255,255);' if self.black_white else 'fill:rgb('+str(colour[0])+', '+str(colour[1])+', '+str(colour[2])+');'
+        fill = 'fill:rgb(255,255,255);' if self.black_white else 'fill:rgb('+str(color[0])+', '+str(color[1])+', '+str(color[2])+');'
         stroke = 'stroke:rgb(20,20,20);stroke-width:1;' if self.minor_lines else 'stroke:none;'
         sym = self.gen_glyph(index, x, y, glyph_scale) if self.symbols else ''
         self.xml += '<rect x="0" y="'+str(y)+'" width="'+str(size)+'" height="'+str(size)+'" style="'+fill+stroke+'"/>' + sym
         # color name
         self.xml += '<rect x="'+str(size)+'" y="'+str(y)+'" width="'+str(size* 10)+'" height="'+str(size)+'" style="fill:rgb(255,255,255);stroke:black;stroke-width:1;"/>'
-        self.xml += '<text x = "' + str(x + size * 1.5) + '" y = "' + str(y + size / 2.0) + '" fill="black">' + colour[3] + '</text>'
+        self.xml += '<text x = "' + str(x + size * 1.5) + '" y = "' + str(y + size / 2.0) + '" fill="black">' + color[3] + '</text>'
         # color code
         self.xml += '<rect x="'+str(size*11)+'" y="'+str(y)+'" width="'+str(size* 2)+'" height="'+str(size)+'" style="fill:rgb(255,255,255);stroke:black;stroke-width:1;"/>'
-        self.xml += '<text x = "' + str(size* 11 + (size/2.0)) + '" y = "' + str(y + size / 2.0) + '" fill="black">' + colour[4] + '</text>'
+        self.xml += '<text x = "' + str(size* 11 + (size/2.0)) + '" y = "' + str(y + size / 2.0) + '" fill="black">' + color[4] + '</text>'
 
     def save(self, filename):
         self.xml += '</svg>'
@@ -91,3 +91,4 @@ class SVG:
         self.xml += f'<rect x="{size*11}" y="{y}" width="{size*2}" height="{size}" style="fill:rgb(255,255,255);stroke:black;stroke-width:1;"/>'
         self.xml += f'<text x="{size*11 + size / 2}" y="{y + size / 2}" fill="black">{color[4]}</text>'
 '''
+
